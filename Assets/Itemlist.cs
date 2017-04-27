@@ -6,13 +6,15 @@ public class Itemlist : MonoBehaviour {
     public List<Item> itemsList = new List<Item>();
 	// Use this for initialization
 	void Start () {
-        Item item = new Item();
-        item.itemID = 0;
-        item.itemName = "emptyItem";
+        Item item = new Item(0, "empty", 0);
         itemsList.Add(item);
 
-        item.itemID = 1;
-        item.itemName = "testItem";
+        item = new Item(1, "test", 0);
+        itemsList.Add(item);
+
+        item = new Potion(2, "TestPotion", 10, 50, 100, true);
+        itemsList.Add(item);
+        item = new Weapon(3, "TestWeapon", 100, 500, 1000);
         itemsList.Add(item);
     }
 	
