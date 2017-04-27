@@ -14,7 +14,7 @@ public class Itemlist : MonoBehaviour {
 
         item = new Potion(2, "TestPotion", 10, 50, 100, true);
         itemsList.Add(item);
-        item = new Weapon(3, "TestWeapon", 100, 500, 1000);
+        item = new Weapon(4, "TestWeapon", 100, 500, 1000);
         itemsList.Add(item);
     }
 	
