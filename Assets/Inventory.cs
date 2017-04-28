@@ -24,44 +24,44 @@ public class Inventory : MonoBehaviour
             inventorySlots[i] = new InventorySlot();
             inventorySlots[i].slotID = i;
             inventorySlots[i].itemAmount = 0;
-            inventorySlots[i].item = itemList.itemsList[0];
+            inventorySlots[i].item = itemList.GetItem(0);
         }
     }
 
     public void AddItem(int itemID, int amount)
     {
-        int itemIndex = CheckIfInInventory(itemID);
+        InventorySlot slot = CheckIfInInventory(itemID);
 
-        if (itemIndex != -1)
+        if (slot != null)
         {
-
-            inventorySlots[itemIndex].itemAmount += amount;
+            slot.item = itemList.GetItem(itemID);
+            slot.itemAmount += amount;
         }
     }
 
-    private int CheckIfInInventory(int itemID)
+    private InventorySlot CheckIfInInventory(int itemID)
     {
         for (int i = 0; i < slotAmount; i++)     //returns slot ID of first item slot found that matched itemID
         {
             if (inventorySlots[i].item.itemID == itemID)
             {
-                return inventorySlots[i].slotID;
+                return inventorySlots[i];
             }
         }
 
-        return -1;
+        return FindFirstEmpty();
 
     }
 
-    private int FindFirstEmpty()
+    private InventorySlot FindFirstEmpty()
     {
         for (int i = 0; i < slotAmount; i++)    //returns slot ID of first item slot that is empty
         {
             if (inventorySlots[i].item.itemID == 0)
             {
-                return inventorySlots[i].slotID;
+                return inventorySlots[i];
             }
         }
-        return -1;
+        return null;
     }
 }

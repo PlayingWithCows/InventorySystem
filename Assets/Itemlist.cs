@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Itemlist : MonoBehaviour {
     public List<Item> itemsList = new List<Item>();
-	// Use this for initialization
-	void Start () {
+
+    
+
+    // Use this for initialization
+    void Start () {
         Item item = new Item(0, "empty", 0);
         itemsList.Add(item);
 
@@ -18,8 +22,11 @@ public class Itemlist : MonoBehaviour {
         itemsList.Add(item);
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public Item GetItem(int itemID)
+    {
+        if (itemsList.Contains(itemsList[itemID])){
+            return itemsList[itemID];
+        }
+        else return itemsList[0];
+    }
 }

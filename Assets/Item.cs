@@ -13,9 +13,8 @@ public class Item {
         itemName = ItemName;
         value = Value;
     }
-    public Item()
+    public Item() // seems to be necessary for public Potion() constructor to work :/
     {
-  
     }
 }
 
