@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,10 +22,7 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < slotAmount; i++)
         {
-            inventorySlots[i] = new InventorySlot();
-            inventorySlots[i].slotID = i;
-            inventorySlots[i].itemAmount = 0;
-            inventorySlots[i].item = itemList.GetItem(0);
+            inventorySlots[i] = new InventorySlot(i, itemList.GetItem(0), 0);
         }
     }
 
@@ -41,7 +39,8 @@ public class Inventory : MonoBehaviour
 
     private InventorySlot CheckIfInInventory(int itemID)
     {
-        for (int i = 0; i < slotAmount; i++)     //returns slot ID of first item slot found that matched itemID
+        Debug.Log(Array.Find(inventorySlots, p => p.item.itemID == itemID));
+        for (int i = 0; i < slotAmount; i++)     //returns first item slot found that matched itemID
         {
             if (inventorySlots[i].item.itemID == itemID)
             {

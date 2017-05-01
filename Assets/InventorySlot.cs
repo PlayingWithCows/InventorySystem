@@ -7,4 +7,10 @@ public class InventorySlot {
     public Item item;
     public int itemAmount;
 
+    public InventorySlot (int _SlotID, Item _Item, int _ItemAmount)
+    {
+        this.slotID = _SlotID;
+        this.item = _Item;
+        this.itemAmount = _ItemAmount;
+    }
 }
