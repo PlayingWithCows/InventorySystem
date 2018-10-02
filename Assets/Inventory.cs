@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
         CreateSlots();
     }
 
+    // use this for create slots
     private void CreateSlots()
     {
         inventorySlots = new InventorySlot[slotAmount];
