@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public int slotAmount;
     public Itemlist itemList;
-    // Use this for initialization
+   
     void Start()
 
     {
@@ -60,6 +60,7 @@ public class Inventory : MonoBehaviour
         {
             if (inventorySlots[i].item.itemID == 0)
             {
+		Debug.Log("Found Slot: "+ i+ " with name: " + inventorySlots[i].item.itemName);
                 return inventorySlots[i].slotID;
             }
         }

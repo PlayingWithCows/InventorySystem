@@ -14,6 +14,11 @@ public class Itemlist : MonoBehaviour {
         item.itemID = 1;
         item.itemName = "testItem";
         itemsList.Add(item);
+
+        item.itemID = 2;
+        item.itemName = "Sword";
+	item.itemDescription = "This is a basic sword.";
+        itemsList.Add(item);
     }
 	
 	// Update is called once per frame
